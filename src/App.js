@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import City from './City';
+import Weather from './Weather';
 import 'bootstrap/dist/css/bootstrap.css';
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +23,12 @@ class App extends React.Component {
       cityName: e.target.value
     });
   }
+  WeatherRequest = async (e) =>{
+    e.preventDefault();
+    let weatherReport = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.cityName}`)
+    console.log(weatherReport);
+
+  }
 
   citySubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +46,6 @@ class App extends React.Component {
       errorMessage: `An Error Occured: ${error.response.status}`
     })
   }
-
   }
 
   render() {
@@ -56,7 +62,9 @@ class App extends React.Component {
             </label>
             <button type="submit">Explore!</button>
           </form>
+        <Weather cityName={this.state.cityName}  lat={this.state.lat} lon={this.state.lon}/>
        <City cityName={this.state.cityName}  lat={this.state.lat} lon={this.state.lon} mapURL={mapURL}/>
+       
        </div>
       </>
     );
