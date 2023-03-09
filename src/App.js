@@ -13,6 +13,7 @@ class App extends React.Component {
       errorMessage: '',
       lat: '',
       lon: '',
+      weatherData: {},
     }
   }
 
@@ -25,21 +26,26 @@ class App extends React.Component {
   }
   WeatherRequest = async (e) =>{
     e.preventDefault();
-    let weatherReport = await axios.get(`${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.cityName}`)
+    let weatherReport = await axios.get(`http://localhost:3001/weather?city_name=${this.state.cityName}`)
     console.log(weatherReport);
-
+    this.setState({
+      weatherData: weatherReport
+    })
   }
+  
 
   citySubmit = async (e) => {
     e.preventDefault();
     try{
     let cityData = await axios.get(`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_API_KEY}&q=${this.state.cityName}&format=json`);
+    this.WeatherRequest(e);
     let latitude= cityData.data[0].lat;
     let longitude= cityData.data[0].lon;
     this.setState({
       lat: latitude,
       lon: longitude,
-    })
+    },
+    )
   } catch (error) {
     this.setState({
       error: true,
@@ -62,7 +68,7 @@ class App extends React.Component {
             </label>
             <button type="submit">Explore!</button>
           </form>
-        <Weather cityName={this.state.cityName}  lat={this.state.lat} lon={this.state.lon}/>
+        <Weather cityName={this.state.cityName}  weather={this.state.weatherData}/>
        <City cityName={this.state.cityName}  lat={this.state.lat} lon={this.state.lon} mapURL={mapURL}/>
        
        </div>
