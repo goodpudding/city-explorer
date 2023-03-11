@@ -44,9 +44,9 @@ Estimate of time needed to complete: 4hrs
 
 Start time: 4:30PM
 
-Finish time: _____
+Finish time: N/a
 
-Actual time needed to complete: _____
+Actual time needed to complete: 4 days. I got sick and wasn't able to complete it in a timely manner. 
 
 =============================================Template=============================================
 Name of feature: ________________________________
