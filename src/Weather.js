@@ -1,22 +1,30 @@
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import React from "react";
 
 class Weather extends React.Component {
   render() {
-    
-    let weatherData = this.props.weather.data.map((day) => {
+    let forecast = this.props.weather.map((day, idx) => {
       return (
-        <>
-          <Card style={{ width: "18rem" }}>
-            <Card.Header>{this.props.cityName}</Card.Header>
-            <
-          </Card>
-        </>
+        <Card.Text date={day} key={idx}>
+          {day.todaysDate}:
+           Low of {day.low} °C, high of {day.high} C° with
+           {day.todaysDescription}
+        </Card.Text>
       );
     });
-    return {weatherData};
-  } 
+
+
+    return (
+      <>
+        <Card style={{ width: "18rem" }}>
+          <Card.Body>
+            <Card.Header>Weather Forecast</Card.Header>
+            {forecast}
+          </Card.Body>
+        </Card>
+      </>
+    );
+  }
 }
 
 export default Weather;
