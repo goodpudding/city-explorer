@@ -1,7 +1,7 @@
 # City-explorer
 
-**Author**: Trey YOung
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Trey Young
+**Version**: 1.1.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -16,14 +16,18 @@
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-[A link to my trello board for this project](https://trello.com/b/gC2nK98c)
+
+**Version**: 1.0.0 (lab6 & lab7)
+**Version**: 1.1.0 (lab8)
+[A link to my trello board for this project](https://trello.com/b/gC2nK98c/module-2-city-explorer)
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 For my Lab 6 WRCC, Daniel Yoon and myself sketched it out. 
 [Lab 6 WRCC](https://docs.google.com/drawings/d/1Tkxp3Tv0wyyU8MDvq5erv-_a8AJENkYlkxesk4n3XBg/edit)
 For my Lab 7 WRCC, Laurel Perkins, Arturo Valadez and myself sketched it out. 
 [Lab 7 WRCC](https://docs.google.com/drawings/d/1hTCB9uyRBhU90Edg4LKK2CSb-1urZN1S1_HH6GuVr2s/edit)
-
+For my Lab 8 WRCC, Zach Jeter and myself sketched it out. 
+[Lab 7 WRCC](https://docs.google.com/drawings/d/1L3DVBUK16m5qSKSUEWH7KMqYzLUhXkWADK2697t3jeA/edit)
 
 
 Name of feature: Lab 6
@@ -46,7 +50,20 @@ Start time: 4:30PM
 
 Finish time: N/a
 
-Actual time needed to complete: 4 days. I got sick and wasn't able to complete it in a timely manner. 
+Actual time needed to complete: 4 days. I got sick and wasn't able to complete it in a timely manner.
+
+------------------------------------------------------------------------------------------
+
+Name of feature: Lab8
+
+Estimate of time needed to complete: 4 hrs
+
+Start time: 4:42pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
 
 =============================================Template=============================================
 Name of feature: ________________________________
