@@ -1,8 +1,9 @@
-import axios from "axios";
-import React from "react";
-import City from "./City";
-import Weather from "./Weather";
-import "bootstrap/dist/css/bootstrap.css";
+
+import axios from 'axios';
+import React from 'react';
+import City from './City';
+import Weather from './Weather';
+import 'bootstrap/dist/css/bootstrap.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -10,15 +11,18 @@ class App extends React.Component {
       cityName: "",
       cityData: {},
       error: false,
+
       errorMessage: "",
       lat: "",
       lon: "",
       weatherData: [],
     };
+
   }
 
   citySubmit = (e) => {
     e.preventDefault();
+
     this.setState(
       {
         cityName: e.target[0].value,
@@ -26,6 +30,7 @@ class App extends React.Component {
       this.handleCityInput
     );
   };
+
 
   handleCityInput = async () => {
     let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_API_KEY}&q=${this.state.cityName}&format=json`;
@@ -48,6 +53,7 @@ class App extends React.Component {
 
   getWeatherInfo = async () => {
     try{
+
     let weatherURL = `${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.cityName}`;
     let weatherResponse = (await axios.get(weatherURL)).data;
     console.log(weatherResponse);
@@ -77,6 +83,7 @@ class App extends React.Component {
             </label>
             <button type="submit">Explore!</button>
           </form>
+
           <City
             cityName={this.state.cityName}
             lat={this.state.lat}
@@ -85,6 +92,7 @@ class App extends React.Component {
           />
         </div>
         <Weather weather={this.state.weatherData} />
+
       </>
     );
   }
