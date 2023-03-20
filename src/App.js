@@ -1,8 +1,7 @@
 import axios from "axios";
 import React from "react";
-import City from "./City";
 import Weather from "./Weather";
-import Movie from "./Movie";
+import Movies from "./Movies";
 import "bootstrap/dist/css/bootstrap.css";
 class App extends React.Component {
   constructor(props) {
@@ -60,7 +59,6 @@ class App extends React.Component {
     try {
       let lat = this.state.lat;
       let lon = this.state.lon;
-      console.log(lat, lon);
       let weatherURL = `${process.env.REACT_APP_SERVER}/weather?&lat=${lat}&lon=${lon}`;
       let weatherResponse = (await axios.get(weatherURL)).data;
       this.setState({
@@ -81,7 +79,6 @@ class App extends React.Component {
       let movieURL = `${process.env.REACT_APP_SERVER}/movies?cityName=${cityName}`;
       let movieResponse = (await axios.get(movieURL)).data;
       this.setState({ movieData: movieResponse });
-      console.log(this.state.movieData);
     } catch (error) {
       this.setState({
         showError: true,
@@ -113,11 +110,23 @@ class App extends React.Component {
           />
         </div>
         <Weather weather={this.state.weatherData} />
-        <Movie movie={this.state.movieData} />
+        <Movies movies={this.state.movieData} />
 
       </>
     );
   }
 }
+class City extends React.Component{
 
+  render(){
+    return(
+      <>
+        <p>{this.props.cityName}</p>
+        <p>{this.props.lat}</p>
+        <p>{this.props.lon}</p>
+        <img src={this.props.mapURL} alt={this.props.cityName}/>
+      </>
+    );
+  }
+}
 export default App;

@@ -65,6 +65,18 @@ Finish time: _____
 Actual time needed to complete: _____
 
 
+---------------------------------------------------------------------------------------------
+
+Name of feature: Lab9
+
+Estimate of time needed to complete: 4hrs
+
+Start time: 230pm
+
+Finish time: ??
+
+Actual time needed to complete: Finally was able to go back and consolidate the code. Now all the components are grouped similarly and cleaned it up a bit.
+
 =============================================Template=============================================
 Name of feature: ________________________________
 
